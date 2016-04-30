@@ -3,4 +3,5 @@ compiler flags:
 
 in php.ini:
 date.timezone = Europe/Warsaw
-extension=xcache.so
+extension = xcache.so
+short_open_tag = off
