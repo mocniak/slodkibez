@@ -1,0 +1,6 @@
+compiler flags:
+'--with-mysqli' '--with-zlib' '--with-gd' '--enable-shmop' '--enable-sockets' '--enable-sysvsem' '--enable-sysvshm' '--enable-mbstring' '--with-iconv' '--with-mysql' '--with-mcrypt' '--with-pdo' '--with-pdo-mysql' '--enable-ftp' '--enable-zip' '--with-curl' '--enable-soap' '--enable-xml' '--enable-json' '--with-openssl' '--enable-bcmath' '--with-litespeed' '--with-iconv-dir' '--enable-ctype' '--enable-tokenizer' '--enable-simplexml' '--enable-intl'
+
+in php.ini:
+date.timezone = Europe/Warsaw
+extension=xcache.so
