@@ -23,11 +23,13 @@ class Cake
      * @var string
      */
     private $name;
-//
-//    /**
-//     * @var SpongeType
-//     */
-//    private $spongeCake;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="SpongeType")
+     * @ORM\JoinColumn(name="sponge_id", referencedColumnName="id")
+     * @var SpongeType
+     */
+    private $spongeCake;
     /**
      * @ORM\Column(type="integer")
      * @var integer
