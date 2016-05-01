@@ -1,54 +1,52 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mocniak
- * Date: 30.04.16
- * Time: 20:34
- */
 
 namespace CakeBundle\Entity;
 
-
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="cakes")
+ */
 class Cake
 {
     /**
-     * @var SpongeType
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $spongeCake;
+    private $id;
+
     /**
+     * @ORM\Column(type="string", length=100)
+     * @var string
+     */
+    private $name;
+//
+//    /**
+//     * @var SpongeType
+//     */
+//    private $spongeCake;
+    /**
+     * @ORM\Column(type="integer")
      * @var integer
      */
     private $numberOfFloors;
-    /**
-     * @var ArrayCollection
-     */
-    private $buttercreams;
-    /**
-     * @var ArrayCollection
-     */
-    private $frostings;
+//    /**
+//     * @var ArrayCollection
+//     */
+//    private $buttercreams;
+//    /**
+//     * @var ArrayCollection
+//     */
+//    private $frostings;
 
     /**
+     * @ORM\Column(type="decimal", scale=2)
      * @var float
      */
     private $pricePerPortion;
-
-    /**
-     * @var boolean
-     */
-    private $isVegan;
-
-    /**
-     * @var boolean
-     */
-    private $gotMilk;
-
-    /**
-     * @var boolean
-     */
-    private $isNutFree;
 
     /**
      * @return float
@@ -64,5 +62,53 @@ class Cake
     public function setPricePerPortion($pricePerPortion)
     {
         $this->pricePerPortion = $pricePerPortion;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumberOfFloors()
+    {
+        return $this->numberOfFloors;
+    }
+
+    /**
+     * @param int $numberOfFloors
+     */
+    public function setNumberOfFloors($numberOfFloors)
+    {
+        $this->numberOfFloors = $numberOfFloors;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
     }
 }
