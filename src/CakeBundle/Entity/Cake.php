@@ -113,4 +113,27 @@ class Cake
     {
         $this->name = $name;
     }
+
+    /**
+     * Set spongeCake
+     *
+     * @param \CakeBundle\Entity\SpongeType $spongeCake
+     * @return Cake
+     */
+    public function setSpongeCake(\CakeBundle\Entity\SpongeType $spongeCake = null)
+    {
+        $this->spongeCake = $spongeCake;
+
+        return $this;
+    }
+
+    /**
+     * Get spongeCake
+     *
+     * @return \CakeBundle\Entity\SpongeType 
+     */
+    public function getSpongeCake()
+    {
+        return $this->spongeCake;
+    }
 }
