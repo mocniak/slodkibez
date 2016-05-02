@@ -31,6 +31,12 @@ class Cake
      */
     private $spongeType;
     /**
+     * @ORM\ManyToOne(targetEntity="Frosting")
+     * @ORM\JoinColumn(name="frosting_id", referencedColumnName="id")
+     * @var Frosting
+     */
+    private $frosting;
+    /**
      * @ORM\Column(type="integer")
      * @var integer
      */
@@ -41,10 +47,6 @@ class Cake
      * @var ArrayCollection
      */
     private $buttercreams;
-//    /**
-//     * @var ArrayCollection
-//     */
-//    private $frostings;
 
     /**
      * @ORM\Column(type="decimal", scale=2)
@@ -155,5 +157,23 @@ class Cake
     public function getButtercreams()
     {
         return $this->buttercreams;
+    }
+
+    /**
+     * @param Frosting $frosting
+     * @return Cake
+     */
+    public function setFrosting($frosting)
+    {
+        $this->frosting = $frosting;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFrosting()
+    {
+        return $this->frosting;
     }
 }

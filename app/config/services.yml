@@ -34,3 +34,13 @@ services:
       - ~
     calls:
       - [ setTranslationDomain, [CakeBundle]]
+  cake.admin.frosting:
+    class: CakeBundle\Admin\FrostingAdmin
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: "Cake structure", label: "Frosting" }
+    arguments:
+      - ~
+      - CakeBundle\Entity\Frosting
+      - ~
+    calls:
+      - [ setTranslationDomain, [CakeBundle]]

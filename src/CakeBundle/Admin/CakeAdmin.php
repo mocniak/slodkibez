@@ -22,17 +22,16 @@ class CakeAdmin extends Admin
                 'class' => 'CakeBundle\Entity\SpongeType'
             ))
             ->add('buttercreams')
+            ->add('frosting')
             ->add('numberOfFloors')
-            ->add('pricePerPortion', null, ['label' => 'Single portion price'])
-        ;
+            ->add('pricePerPortion', null, ['label' => 'Single portion price']);
     }
 
     // Fields to be shown on filter forms
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('name')
-        ;
+            ->add('name');
     }
 
     // Fields to be shown on lists
@@ -41,7 +40,13 @@ class CakeAdmin extends Admin
         $listMapper
             ->addIdentifier('name')
             ->add('spongeType')
-            ->add('pricePerPortion')        ;
+            ->add('pricePerPortion')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'edit' => array(),
+                    'delete' => array(),
+                )
+            ));
     }
 
     // Fields to be shown on show action
@@ -49,7 +54,6 @@ class CakeAdmin extends Admin
     {
         $showMapper
             ->add('title')
-            ->add('pricePerPortion')
-        ;
+            ->add('pricePerPortion');
     }
 }

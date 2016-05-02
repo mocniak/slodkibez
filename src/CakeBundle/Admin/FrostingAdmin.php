@@ -8,14 +8,14 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 
-class ButtercreamAdmin extends Admin
+class FrostingAdmin extends Admin
 {
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
             ->add('name', 'text', array(
-                'label' => 'Buttercream name'
+                'label' => 'Frosting name'
             ));
     }
 
@@ -38,7 +38,7 @@ class ButtercreamAdmin extends Admin
                     'delete' => array(),
                 )
             ))
-            ;
+        ;
     }
 
     // Fields to be shown on show action
