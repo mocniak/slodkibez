@@ -14,3 +14,13 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [AppBundle]]
+    cake.admin.spongeType:
+            class: CakeBundle\Admin\SpongeTypeAdmin
+            tags:
+                - { name: sonata.admin, manager_type: orm, group: "Cake structure", label: "Spongecake" }
+            arguments:
+                - ~
+                - CakeBundle\Entity\SpongeType
+                - ~
+            calls:
+                - [ setTranslationDomain, [AppBundle]]
