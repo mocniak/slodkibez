@@ -29,7 +29,7 @@ class Cake
      * @ORM\JoinColumn(name="sponge_id", referencedColumnName="id")
      * @var SpongeType
      */
-    private $spongeCake;
+    private $spongeType;
     /**
      * @ORM\Column(type="integer")
      * @var integer
@@ -117,12 +117,12 @@ class Cake
     /**
      * Set spongeCake
      *
-     * @param \CakeBundle\Entity\SpongeType $spongeCake
+     * @param \CakeBundle\Entity\SpongeType $spongeType
      * @return Cake
      */
-    public function setSpongeCake(\CakeBundle\Entity\SpongeType $spongeCake = null)
+    public function setSpongeType(\CakeBundle\Entity\SpongeType $spongeType = null)
     {
-        $this->spongeCake = $spongeCake;
+        $this->spongeType = $spongeType;
 
         return $this;
     }
@@ -132,8 +132,8 @@ class Cake
      *
      * @return \CakeBundle\Entity\SpongeType 
      */
-    public function getSpongeCake()
+    public function getSpongeType()
     {
-        return $this->spongeCake;
+        return $this->spongeType;
     }
 }
