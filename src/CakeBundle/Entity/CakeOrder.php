@@ -26,6 +26,12 @@ class CakeOrder implements OrderElement
      */
     private $diameter;
 
+    /**
+     * @ORM\Column(type="integer")
+     * @var integer
+     */
+    private $numberOfFloors;
+
     public function getPrice()
     {
         return $this->cake->getPricePerPortion() * $this->portions;

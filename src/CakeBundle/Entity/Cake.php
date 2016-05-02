@@ -37,10 +37,12 @@ class Cake
      */
     private $frosting;
     /**
-     * @ORM\Column(type="integer")
-     * @var integer
+     * @ORM\ManyToOne(targetEntity="Soak")
+     * @ORM\JoinColumn(name="soak_id", referencedColumnName="id")
+     * @var Soak
      */
-    private $numberOfFloors;
+    private $soak;
+
     /**
      * @ORM\ManyToMany(targetEntity="Buttercream")
      * @ORM\JoinColumn(name="buttercream_id", referencedColumnName="id")
@@ -121,10 +123,10 @@ class Cake
     /**
      * Set spongeCake
      *
-     * @param \CakeBundle\Entity\SpongeType $spongeType
+     * @param SpongeType $spongeType
      * @return Cake
      */
-    public function setSpongeType(\CakeBundle\Entity\SpongeType $spongeType = null)
+    public function setSpongeType(SpongeType $spongeType = null)
     {
         $this->spongeType = $spongeType;
 
@@ -134,7 +136,7 @@ class Cake
     /**
      * Get spongeCake
      *
-     * @return \CakeBundle\Entity\SpongeType 
+     * @return SpongeType
      */
     public function getSpongeType()
     {
@@ -163,17 +165,35 @@ class Cake
      * @param Frosting $frosting
      * @return Cake
      */
-    public function setFrosting($frosting)
+    public function setFrosting(Frosting $frosting)
     {
         $this->frosting = $frosting;
         return $this;
     }
 
     /**
-     * @return mixed
+     * @return Frosting
      */
     public function getFrosting()
     {
         return $this->frosting;
+    }
+
+    /**
+     * @param Soak $soak
+     * @return Cake
+     */
+    public function setSoak(Soak $soak)
+    {
+        $this->soak = $soak;
+        return $this;
+    }
+
+    /**
+     * @return Soak
+     */
+    public function getSoak()
+    {
+        return $this->soak;
     }
 }

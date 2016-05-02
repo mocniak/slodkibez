@@ -8,31 +8,23 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 
-class CakeAdmin extends Admin
+class SoakAdmin extends Admin
 {
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
             ->add('name', 'text', array(
-                'label' => 'Cake name'
-            ))
-            ->add('spongeType', 'entity', array(
-                'label' => 'Spongecake type',
-                'class' => 'CakeBundle\Entity\SpongeType'
-            ))
-            ->add('soak')
-            ->add('buttercreams')
-            ->add('frosting')
-            ->add('numberOfFloors')
-            ->add('pricePerPortion', null, ['label' => 'Single portion price']);
+                'label' => 'Soak name'
+            ));
     }
 
     // Fields to be shown on filter forms
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('name');
+            ->add('name')
+        ;
     }
 
     // Fields to be shown on lists
@@ -40,21 +32,20 @@ class CakeAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name')
-            ->add('spongeType')
-            ->add('pricePerPortion')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),
                     'delete' => array(),
                 )
-            ));
+            ))
+            ;
     }
 
     // Fields to be shown on show action
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('title')
-            ->add('pricePerPortion');
+            ->add('name')
+        ;
     }
 }

@@ -44,3 +44,13 @@ services:
       - ~
     calls:
       - [ setTranslationDomain, [CakeBundle]]
+  cake.admin.soak:
+    class: CakeBundle\Admin\SoakAdmin
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: "Cake structure", label: "Soak" }
+    arguments:
+      - ~
+      - CakeBundle\Entity\Soak
+      - ~
+    calls:
+      - [ setTranslationDomain, [CakeBundle]]
