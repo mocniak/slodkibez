@@ -35,10 +35,12 @@ class Cake
      * @var integer
      */
     private $numberOfFloors;
-//    /**
-//     * @var ArrayCollection
-//     */
-//    private $buttercreams;
+    /**
+     * @ORM\ManyToMany(targetEntity="Buttercream")
+     * @ORM\JoinColumn(name="buttercream_id", referencedColumnName="id")
+     * @var ArrayCollection
+     */
+    private $buttercreams;
 //    /**
 //     * @var ArrayCollection
 //     */
@@ -135,5 +137,23 @@ class Cake
     public function getSpongeType()
     {
         return $this->spongeType;
+    }
+
+    /**
+     * @param ArrayCollection $buttercreams
+     * @return Cake
+     */
+    public function setButtercreams($buttercreams)
+    {
+        $this->buttercreams = $buttercreams;
+        return $this;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getButtercreams()
+    {
+        return $this->buttercreams;
     }
 }
