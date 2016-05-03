@@ -1,6 +1,6 @@
-#app:
-#    resource: "@AppBundle/Controller/"
-#    type:     annotation
+cake:
+    resource: "@CakeBundle/Controller/"
+    type:     annotation
 
 
 # app/config/routing.yml

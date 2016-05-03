@@ -1,0 +1,11 @@
+{# src/CakeBundle/Resources/views/base.html.twig #}
+{% extends 'CakeBundle::base.html.twig' %}
+
+{% block title %}Torty - {{ parent() }}{% endblock %}
+
+{% block body %}
+    {% for cake in cakes %}
+        <h2>{{ cake.name }}</h2>
+        <p>{{ cake.priceperportion }}</p>
+    {% endfor %}
+{% endblock %}

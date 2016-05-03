@@ -1,0 +1,22 @@
+{# src/CakeBundle/Resources/views/base.html.twig #}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Słodki Bez {% endblock %}</title>
+</head>
+<body>
+<div id="sidebar">
+    {% block sidebar %}
+        <ul>
+            <li><a href="{{ path('homepage') }}">Strona główna</a></li>
+            <li><a href="{{ path('cake_creator') }}">Zamów tort</a></li>
+        </ul>
+    {% endblock %}
+</div>
+
+<div id="content">
+    {% block body %}{% endblock %}
+</div>
+</body>
+</html>
