@@ -24,7 +24,7 @@ class CakeAdmin extends Admin
             ->add('soak')
             ->add('buttercreams')
             ->add('frosting')
-            ->add('numberOfFloors')
+            ->add('official')
             ->add('pricePerPortion', null, ['label' => 'Single portion price']);
     }
 
@@ -42,6 +42,7 @@ class CakeAdmin extends Admin
             ->addIdentifier('name')
             ->add('spongeType')
             ->add('pricePerPortion')
+            ->add('official')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),

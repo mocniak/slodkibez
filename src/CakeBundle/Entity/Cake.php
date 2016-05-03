@@ -57,6 +57,12 @@ class Cake
     private $pricePerPortion;
 
     /**
+     * @ORM\Column(type="boolean")
+     * @var boolean
+     */
+    private $official;
+
+    /**
      * @return float
      */
     public function getPricePerPortion()
@@ -195,5 +201,23 @@ class Cake
     public function getSoak()
     {
         return $this->soak;
+    }
+
+    /**
+     * @param boolean $official
+     * @return Cake
+     */
+    public function setOfficial($official)
+    {
+        $this->official = $official;
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isOfficial()
+    {
+        return $this->official;
     }
 }
