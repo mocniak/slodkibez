@@ -79,22 +79,6 @@ class Cake
     }
 
     /**
-     * @return int
-     */
-    public function getNumberOfFloors()
-    {
-        return $this->numberOfFloors;
-    }
-
-    /**
-     * @param int $numberOfFloors
-     */
-    public function setNumberOfFloors($numberOfFloors)
-    {
-        $this->numberOfFloors = $numberOfFloors;
-    }
-
-    /**
      * @return mixed
      */
     public function getId()

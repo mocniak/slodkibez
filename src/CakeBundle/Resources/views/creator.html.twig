@@ -1,0 +1,10 @@
+{# src/CakeBundle/Resources/views/base.html.twig #}
+{% extends 'CakeBundle::base.html.twig' %}
+
+{% block title %}Torty - {{ parent() }}{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+{% endblock %}

@@ -2,6 +2,8 @@
 
 namespace CakeBundle\Controller;
 
+use CakeBundle\Entity\Cake;
+use CakeBundle\Form\Type\CakeType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,7 +22,23 @@ class DefaultController extends Controller
      */
     public function creatorAction(Request $request)
     {
-        return $this->render('CakeBundle::creator.html.twig');
+        $cake = new Cake();
+        $form = $this->createForm(CakeType::class,$cake);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $cake->setName('cake to order');
+            $cake->setOfficial(false);
+            $cake->setPricePerPortion(10);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($cake);
+            $em->flush();
+
+            return $this->redirectToRoute('cakes');
+        }
+        return $this->render('CakeBundle::creator.html.twig', ['form' => $form->createView()]);
     }
     /**
      * @Route("/cakes", name="cakes")
