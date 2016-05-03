@@ -9,8 +9,12 @@
 namespace CakeBundle\Entity;
 
 
-class CakeOrder implements OrderElement
+class CakeOrderItem implements OrderItemInterface
 {
+    /**
+     * @var string
+     */
+    private $name;
     /**
      * @var Cake
      */
@@ -35,6 +39,24 @@ class CakeOrder implements OrderElement
     public function getPrice()
     {
         return $this->cake->getPricePerPortion() * $this->portions;
+    }
+
+    /**
+     * @param string $name
+     * @return CakeOrderItem
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
 }

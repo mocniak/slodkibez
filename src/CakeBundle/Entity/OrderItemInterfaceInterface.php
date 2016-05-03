@@ -9,6 +9,7 @@
 namespace CakeBundle\Entity;
 
 
-interface OrderElement {
+interface OrderItemInterface {
+    public function getName();
     public function getPrice();
 }
