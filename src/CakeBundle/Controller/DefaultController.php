@@ -36,9 +36,18 @@ class DefaultController extends Controller
             $em->persist($cake);
             $em->flush();
 
-            return $this->redirectToRoute('cakes');
+            return $this->redirectToRoute('order_cake',['cakeId'=>$cake->getId()]);
         }
         return $this->render('CakeBundle::creator.html.twig', ['form' => $form->createView()]);
+    }
+    /**
+     * @Route("/order_cake/{cakeId}", name="order_cake")
+     */
+    public function orderCakeAction($cakeId) {
+        $repository = $this->getDoctrine()
+            ->getRepository('CakeBundle:Cake');
+        $cake = $repository->findOneBy(['id'=>$cakeId]);
+        return $this->render('CakeBundle::order_cake.html.twig', ['cake' => $cake]);
     }
     /**
      * @Route("/cakes", name="cakes")
