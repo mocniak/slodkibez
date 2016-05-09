@@ -204,4 +204,9 @@ class Cake
     {
         return $this->official;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }
