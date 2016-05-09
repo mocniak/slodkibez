@@ -82,4 +82,22 @@ class CakeOrderItem implements OrderItemInterface
         return $this->numberOfFloors;
     }
 
+    /**
+     * @param mixed $id
+     * @return CakeOrderItem
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
 }
