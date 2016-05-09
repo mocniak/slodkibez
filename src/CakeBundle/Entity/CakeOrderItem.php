@@ -1,34 +1,39 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mocniak
- * Date: 30.04.16
- * Time: 20:42
- */
 
 namespace CakeBundle\Entity;
 
-
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="cake_order_items")
+ */
 class CakeOrderItem implements OrderItemInterface
 {
+
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+
     /**
      * @var string
      */
     private $name;
     /**
+     * @ORM\OneToOne(targetEntity="Cake")
+     * @ORM\JoinColumn(name="cake_id", referencedColumnName="id")
      * @var Cake
      */
     private $cake;
 
     /**
+     * @ORM\Column(type="integer")
      * @var integer
      */
     private $portions;
 
-    /**
-     * @var integer
-     */
-    private $diameter;
 
     /**
      * @ORM\Column(type="integer")
@@ -57,6 +62,24 @@ class CakeOrderItem implements OrderItemInterface
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * @param int $numberOfFloors
+     * @return CakeOrderItem
+     */
+    public function setNumberOfFloors($numberOfFloors)
+    {
+        $this->numberOfFloors = $numberOfFloors;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumberOfFloors()
+    {
+        return $this->numberOfFloors;
     }
 
 }
