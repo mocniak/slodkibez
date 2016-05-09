@@ -1,6 +1,7 @@
 <?php
 
 namespace CakeBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
@@ -119,6 +120,42 @@ class CakeOrderItem implements OrderItemInterface
     public function getOrder()
     {
         return $this->order;
+    }
+
+    /**
+     * @param Cake $cake
+     * @return CakeOrderItem
+     */
+    public function setCake($cake)
+    {
+        $this->cake = $cake;
+        return $this;
+    }
+
+    /**
+     * @return Cake
+     */
+    public function getCake()
+    {
+        return $this->cake;
+    }
+
+    /**
+     * @param int $portions
+     * @return CakeOrderItem
+     */
+    public function setPortions($portions)
+    {
+        $this->portions = $portions;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPortions()
+    {
+        return $this->portions;
     }
 
 }

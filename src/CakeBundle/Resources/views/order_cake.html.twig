@@ -4,5 +4,7 @@
 {% block title %}Zamów tort - {{ parent() }}{% endblock %}
 
 {% block body %}
-    {{ cake.name }}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
 {% endblock %}

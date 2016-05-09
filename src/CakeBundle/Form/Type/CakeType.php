@@ -13,7 +13,7 @@ class CakeType extends AbstractType
     {
         $builder
             ->add('spongeType')
-            ->add('soak')
+            ->add('buttercreams')
             ->add('soak')
             ->add('frosting')
             ->add('save', SubmitType::class)

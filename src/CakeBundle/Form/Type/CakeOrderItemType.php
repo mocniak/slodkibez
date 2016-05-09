@@ -11,8 +11,10 @@ class CakeOrderItemType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('task')
-            ->add('dueDate', null, array('widget' => 'single_text'))
+            ->add('name')
+            ->add('cake', CakeType::class)
+            ->add('portions')
+            ->add('numberOfFloors')
             ->add('save', SubmitType::class)
         ;
     }
