@@ -28,7 +28,7 @@ class DefaultController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $cake->setName('cake to order');
+            $cake->setName('Customer\'s cake '.$cake->getSpongeType(). ' with '. $cake->getFrosting());
             $cake->setOfficial(false);
             $cake->setPricePerPortion(10);
 
