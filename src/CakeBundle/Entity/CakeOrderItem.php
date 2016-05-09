@@ -15,8 +15,12 @@ class CakeOrderItem implements OrderItemInterface
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-
+    /**
+     * @ORM\ManyToOne(targetEntity="Order")
+     * @ORM\JoinColumn(name="order_id", referencedColumnName="id")
+     * @var Order
+     */
+    private $order;
     /**
      * @var string
      */
@@ -33,7 +37,6 @@ class CakeOrderItem implements OrderItemInterface
      * @var integer
      */
     private $portions;
-
 
     /**
      * @ORM\Column(type="integer")
@@ -98,6 +101,24 @@ class CakeOrderItem implements OrderItemInterface
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @param Order $order
+     * @return CakeOrderItem
+     */
+    public function setOrder($order)
+    {
+        $this->order = $order;
+        return $this;
+    }
+
+    /**
+     * @return Order
+     */
+    public function getOrder()
+    {
+        return $this->order;
     }
 
 }
