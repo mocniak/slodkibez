@@ -8,7 +8,68 @@
         <div class="box">
             <div class="col-lg-12">
                 {{ form_start(form) }}
-                {{ form_widget(form) }}
+                <h2>Ciasto</h2>
+                <div class="form-group">
+                    {{ form_label(form.cake.spongeType,
+                    'Rodzaj biszkoptu',
+                    {'label_attr': {'class': 'col-sm-2 control-label'}}
+                    ) }}
+                    <div class="col-sm-10">
+                        {{ form_errors(form.cake.spongeType) }}
+                        {{ form_widget(form.cake.spongeType) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.cake.soak,
+                    'Nasączenie biszkoptu',
+                    {'label_attr': {'class': 'col-sm-2 control-label'}}
+                    ) }}
+                    <div class="col-sm-10">
+                        {{ form_errors(form.cake.soak) }}
+                        {{ form_widget(form.cake.soak) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.cake.frosting,
+                    'Polewa',
+                    {'label_attr': {'class': 'col-sm-2 control-label'}}
+                    ) }}
+                    <div class="col-sm-10">
+                        {{ form_errors(form.cake.frosting) }}
+                        {{ form_widget(form.cake.frosting) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.cake.buttercreams,
+                    'Kremy',
+                    {'label_attr': {'class': 'col-sm-2 control-label'}}
+                    ) }}
+                    <div class="col-sm-10">
+                        {{ form_errors(form.cake.buttercreams) }}
+                        {{ form_widget(form.cake.buttercreams) }}
+                    </div>
+                </div>
+                <h2>Rozmiar</h2>
+
+                <div class="form-group">
+                    {{ form_label(form.portions,
+                    'Liczba porcji',
+                    {'label_attr': {'class': 'col-sm-2 control-label'}}
+                    ) }}
+                    <div class="col-sm-10">
+                        {{ form_errors(form.portions) }}
+                        {{ form_widget(form.portions) }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        {{ form_widget(form.save,  {'attr': {'class': 'btn btn-default'}}) }}
+                    </div>
+                </div>
+
+                <div>
+                </div>
                 {{ form_end(form) }}
             </div>
         </div>

@@ -26,19 +26,19 @@ class Cake
 
     /**
      * @ORM\ManyToOne(targetEntity="SpongeType")
-     * @ORM\JoinColumn(name="sponge_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="sponge_id", referencedColumnName="id", nullable = false)
      * @var SpongeType
      */
     private $spongeType;
     /**
      * @ORM\ManyToOne(targetEntity="Frosting")
-     * @ORM\JoinColumn(name="frosting_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="frosting_id", referencedColumnName="id", nullable = false)
      * @var Frosting
      */
     private $frosting;
     /**
      * @ORM\ManyToOne(targetEntity="Soak")
-     * @ORM\JoinColumn(name="soak_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="soak_id", referencedColumnName="id", nullable = false)
      * @var Soak
      */
     private $soak;
