@@ -16,7 +16,6 @@ class CakeType extends AbstractType
             ->add('buttercreams')
             ->add('soak')
             ->add('frosting')
-            ->add('save', SubmitType::class)
         ;
     }
 

@@ -3,20 +3,36 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %} Słodki Bez {% endblock %}</title>
+    <title>{% block title %} Słodki Bez {% endblock %} - bez wyrzutów sumienia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-<div id="sidebar">
-    {% block sidebar %}
-        <ul>
-            <li><a href="{{ path('homepage') }}">Strona główna</a></li>
-            <li><a href="{{ path('order_cake') }}">Zamów tort</a></li>
-        </ul>
-    {% endblock %}
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+<div id="title-container" style="background-image: url({{ asset('img/title_background.jpg') }})">
+    <div id="main-menu">
+        {% block sidebar %}
+            <ul>
+                <li><a href="{{ path('homepage') }}">Strona główna</a></li>
+                <li><a href="#">O nas</a></li>
+                <li><a href="#">Katalog</a></li>
+                <li><a href="{{ path('order_cake') }}">Zamów tort</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        {% endblock %}
+    </div>
+    <img id="main-logo" src="{{ asset('img/logo.png') }}">
+
+    <div id="content">
+        {% block body %}{% endblock %}
+    </div>
+
 </div>
 
-<div id="content">
-    {% block body %}{% endblock %}
-</div>
 </body>
 </html>
