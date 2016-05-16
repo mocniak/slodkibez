@@ -35,7 +35,7 @@ p {
 
 hr {
     max-width: 400px;
-    border-color: #999999;
+    border-color: black;
 }
 
 .brand,
@@ -109,6 +109,42 @@ hr {
     margin: 0 auto 0;
 }
 
+.cake-ingredient-pane {
+    text-align: left;
+    min-height: 90vh;
+    color: black;
+    text-shadow: 0px 0px 5px white;
+    background-color: #D9D9D9;
+    background-size: cover;
+    background-position: center;
+    padding: 30px 0;
+    margin: 40px 0;
+    font-weight: 500;
+    overflow: auto;
+}
+.cake-ingredient-pane h2 {
+    max-width: 400px;
+    display: block;
+    margin: 30px auto 40px;
+    text-align: center;
+    padding: 30px 30px 20px;
+    border-width: 2px 0;
+    border-style: solid;
+}
+.cake-ingredient-pane input {
+    margin: 13px;
+    display: block;
+    float: left;
+    clear: left;
+}
+.cake-ingredient-pane label {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 10px;
+    float: left;
+    clear: none;
+    display: block;
+}
 footer {
     background: #fff;
     background: rgba(255,255,255,0.9);
