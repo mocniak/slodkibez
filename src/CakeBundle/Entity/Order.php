@@ -16,12 +16,30 @@ class Order {
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    
+
     private $id;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    private $deliveryDate;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     * @var string
+     */
+    private $phone;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     * @var string
+     */
+    private $email;
+    
     /**
      * @var OrderItemInterface[]
      */
-
     private $orderItems;
 
     /**
@@ -58,5 +76,59 @@ class Order {
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @param \DateTime $deliveryDate
+     * @return Order
+     */
+    public function setDeliveryDate($deliveryDate)
+    {
+        $this->deliveryDate = $deliveryDate;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDeliveryDate()
+    {
+        return $this->deliveryDate;
+    }
+
+    /**
+     * @param string $phone
+     * @return Order
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param string $email
+     * @return Order
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 }

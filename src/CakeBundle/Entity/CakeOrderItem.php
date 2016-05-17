@@ -27,8 +27,8 @@ class CakeOrderItem implements OrderItemInterface
      */
     private $name;
     /**
-     * @ORM\OneToOne(targetEntity="Cake")
-     * @ORM\JoinColumn(name="cake_id", referencedColumnName="id")
+     * @ORM\OneToOne(targetEntity="Cake", cascade={"persist"})
+     * @ORM\JoinColumn(name="cake_id", referencedColumnName="id" )
      * @var Cake
      */
     private $cake;

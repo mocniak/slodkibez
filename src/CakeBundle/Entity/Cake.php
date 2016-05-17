@@ -51,7 +51,7 @@ class Cake
     private $buttercreams;
 
     /**
-     * @ORM\Column(type="decimal", scale=2)
+     * @ORM\Column(type="decimal", scale=2, nullable=true)
      * @var float
      */
     private $pricePerPortion;
@@ -205,6 +205,9 @@ class Cake
         return $this->official;
     }
 
+    /**
+     * @return string
+     */
     public function __toString()
     {
         return $this->name;
