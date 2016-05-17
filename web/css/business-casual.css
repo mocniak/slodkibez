@@ -11,7 +11,7 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    text-align: center;
+    text-align: left;
 
 }
 
@@ -25,6 +25,7 @@ h6 {
     font-family: "Josefin Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 p {
@@ -113,7 +114,7 @@ hr {
     text-align: left;
     min-height: 90vh;
     color: black;
-    text-shadow: 0px 0px 5px white;
+    text-shadow: 0px 0px 10px rgba(255,255,255,1);
     background-color: #D9D9D9;
     background-size: cover;
     background-position: center;
@@ -145,6 +146,11 @@ hr {
     clear: none;
     display: block;
 }
+.fog {
+    background-color: rgba(255,255,255,0.5);
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
 footer {
     background: #fff;
     background: rgba(255,255,255,0.9);
@@ -157,7 +163,9 @@ footer p {
 
 @media screen and (min-width:768px) {
     .brand {
-        display: inline-block;
+        display: block;
+        max-width: 400px;
+        text-align: center;
         margin: 15px auto 10px;
         padding: 20px 40px 10px;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
