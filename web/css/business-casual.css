@@ -115,10 +115,11 @@ hr {
     min-height: 90vh;
     color: black;
     text-shadow: 0px 0px 10px rgba(255,255,255,1);
-    background-color: #D9D9D9;
+    background-color: rgba(255,255,255,0.3);
+    background-blend-mode: overlay;
     background-size: cover;
     background-position: center;
-    padding: 30px 0;
+    padding: 10vh 0;
     margin: 40px 0;
     font-weight: 500;
     overflow: auto;
@@ -133,7 +134,7 @@ hr {
     border-style: solid;
 }
 .cake-ingredient-pane input {
-    margin: 13px;
+    margin: 13px 10px;
     display: block;
     float: left;
     clear: left;
@@ -141,13 +142,13 @@ hr {
 .cake-ingredient-pane label {
     font-weight: 600;
     font-size: 16px;
-    margin: 10px;
+    margin: 10px 0px 10px 10px;
     float: left;
     clear: none;
     display: block;
 }
 .fog {
-    background-color: rgba(255,255,255,0.5);
+    /*background-color: rgba(255,255,255,0.5);*/
     padding-top: 15px;
     padding-bottom: 10px;
 }
