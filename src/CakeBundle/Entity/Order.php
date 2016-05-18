@@ -20,10 +20,38 @@ class Order {
     private $id;
 
     /**
+     * @ORM\OneToOne(targetEntity="Cake", cascade={"persist"})
+     * @ORM\JoinColumn(name="cake_id", referencedColumnName="id" )
+     * @var Cake
+     */
+    private $cake;
+
+
+    /**
+     * @ORM\Column(type="integer")
+     * @var integer
+     */
+    private $portions;
+
+    /**
+     * @ORM\Column(type="integer")
+     * @var integer
+     */
+    private $numberOfFloors;
+
+
+    /**
      * @ORM\Column(type="datetime")
      * @var \DateTime
      */
     private $deliveryDate;
+
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    private $orderDate;
 
     /**
      * @ORM\Column(type="string", length=100)
@@ -36,6 +64,13 @@ class Order {
      * @var string
      */
     private $email;
+
+
+    /**
+     * @ORM\Column(type="string")
+     * @var string
+     */
+    private $notes;
     
     /**
      * @var OrderItemInterface[]
@@ -130,5 +165,85 @@ class Order {
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCake()
+    {
+        return $this->cake;
+    }
+
+    /**
+     * @param mixed $portions
+     * @return Order
+     */
+    public function setPortions($portions)
+    {
+        $this->portions = $portions;
+        return $this;
+    }
+
+    /**
+     * @param mixed $numberOfFloors
+     * @return Order
+     */
+    public function setNumberOfFloors($numberOfFloors)
+    {
+        $this->numberOfFloors = $numberOfFloors;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNumberOfFloors()
+    {
+        return $this->numberOfFloors;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPortions()
+    {
+        return $this->portions;
+    }
+
+    /**
+     * @param string $notes
+     * @return Order
+     */
+    public function setNotes($notes)
+    {
+        $this->notes = $notes;
+        return $this;
+    }
+
+    /**
+     * @param mixed $orderDate
+     * @return Order
+     */
+    public function setOrderDate($orderDate)
+    {
+        $this->orderDate = $orderDate;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNotes()
+    {
+        return $this->notes;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOrderDate()
+    {
+        return $this->orderDate;
     }
 }

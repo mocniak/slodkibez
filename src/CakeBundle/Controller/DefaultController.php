@@ -59,6 +59,7 @@ class DefaultController extends Controller
         if (!$cakeOrderItem) throw new EntityNotFoundException();
         $order = new Order();
         $form = $this->createForm(CakeOrderType::class, $order);
+        if ($form->isSubmitted() && $form->isValid()) {}
         return $this->render('CakeBundle::order_cake.html.twig', ['form' => $form->createView(), 'cakeOrderItem' => $cakeOrderItem]);
     }
 
