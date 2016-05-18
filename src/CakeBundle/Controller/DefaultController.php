@@ -2,12 +2,8 @@
 
 namespace CakeBundle\Controller;
 
-use CakeBundle\Entity\Cake;
-use CakeBundle\Entity\CakeOrderItem;
 use CakeBundle\Entity\Order;
-use CakeBundle\Form\Type\CakeOrderItemType;
-use CakeBundle\Form\Type\CakeOrderType;
-use CakeBundle\Form\Type\CakeType;
+use CakeBundle\Form\Type\OrderType;
 use Doctrine\ORM\EntityNotFoundException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -27,41 +23,40 @@ class DefaultController extends Controller
      */
     public function creatorAction(Request $request)
     {
-        $cakeOrderItem = new CakeOrderItem();
-        $form = $this->createForm(CakeOrderItemType::class,$cakeOrderItem);
+        $order = new Order();
+        $form = $this->createForm(OrderType::class,$order);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $cake = $cakeOrderItem->getCake();
+            $cake = $order->getCake();
             $cake->setName($cake->getSpongeType(). ', '.$cake->getSoak(). ', '. $cake->getFrosting());
-            $cakeOrderItem->setName($cake->getName());
+            $order->setName($cake->getName());
             $cake->setOfficial(false);
-//            $cake->setPricePerPortion(10);
 
             $em = $this->getDoctrine()->getManager();
-            $em->persist($cakeOrderItem);
+            $em->persist($order);
             $em->flush();
 
-            return $this->redirectToRoute('order_cake', ['cakeOrderItemId' => $cakeOrderItem->getId()]);
+            return $this->redirectToRoute('order_cake', ['cakeOrderItemId' => $order->getId()]);
         }
         return $this->render('CakeBundle::create_cake.html.twig', ['form' => $form->createView()]);
     }
     
-    /**
-     * @Route("/order_cake/{cakeOrderItemId}", name="order_cake")
-     */
-    public function orderCakeAction($cakeOrderItemId)
-    {
-        $repository = $this->getDoctrine()
-            ->getRepository('CakeBundle:CakeOrderItem');
-        /** @var CakeOrderItem $cake */
-        $cakeOrderItem = $repository->find($cakeOrderItemId);
-        if (!$cakeOrderItem) throw new EntityNotFoundException();
-        $order = new Order();
-        $form = $this->createForm(CakeOrderType::class, $order);
-        if ($form->isSubmitted() && $form->isValid()) {}
-        return $this->render('CakeBundle::order_cake.html.twig', ['form' => $form->createView(), 'cakeOrderItem' => $cakeOrderItem]);
-    }
+//    /**
+//     * @Route("/order_cake/{cakeOrderItemId}", name="order_cake")
+//     */
+//    public function orderCakeAction($cakeOrderItemId)
+//    {
+//        $repository = $this->getDoctrine()
+//            ->getRepository('CakeBundle:CakeOrderItem');
+//        /** @var CakeOrderItem $cake */
+//        $cakeOrderItem = $repository->find($cakeOrderItemId);
+//        if (!$cakeOrderItem) throw new EntityNotFoundException();
+//        $order = new Order();
+//        $form = $this->createForm(OrderType::class, $order);
+//        if ($form->isSubmitted() && $form->isValid()) {}
+//        return $this->render('CakeBundle::order_cake.html.twig', ['form' => $form->createView(), 'cakeOrderItem' => $cakeOrderItem]);
+//    }
 
 
         /**

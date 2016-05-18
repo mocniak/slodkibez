@@ -8,15 +8,18 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-class CakeOrderType extends AbstractType
+class OrderType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('cake', CakeType::class)
+            ->add('portions')
+            ->add('numberOfFloors')
             ->add('delivery_date', DateType::class)
             ->add('phone')
             ->add('email', EmailType::class)
-            ->add('Order', SubmitType::class)
+            ->add('order', SubmitType::class)
         ;
     }
 }
