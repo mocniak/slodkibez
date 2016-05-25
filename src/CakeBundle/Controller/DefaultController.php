@@ -39,6 +39,7 @@ class DefaultController extends Controller
     {
         $order = new Order();
         $order->setOrderDate(new \DateTime());
+        $order->setDeliveryDate(new \DateTime("+2 days"));
         $order->setPortions(8);
         $order->setNumberOfFloors(1);
         $form = $this->createForm(OrderType::class,$order);
