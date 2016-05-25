@@ -67,7 +67,7 @@ class Order {
 
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      * @var string
      */
     private $notes;
@@ -245,5 +245,15 @@ class Order {
     public function getOrderDate()
     {
         return $this->orderDate;
+    }
+
+    /**
+     * @param Cake $cake
+     * @return Order
+     */
+    public function setCake($cake)
+    {
+        $this->cake = $cake;
+        return $this;
     }
 }
