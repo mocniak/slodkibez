@@ -54,3 +54,13 @@ services:
       - ~
     calls:
       - [ setTranslationDomain, [CakeBundle]]
+  cake.admin.order:
+    class: CakeBundle\Admin\OrderAdmin
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: "Orders", label: "Order" }
+    arguments:
+      - ~
+      - CakeBundle\Entity\Order
+      - ~
+    calls:
+      - [ setTranslationDomain, [CakeBundle]]
