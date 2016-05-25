@@ -30,9 +30,8 @@ class DefaultController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $cake = $order->getCake();
             $cake->setName($cake->getSpongeType(). ', '.$cake->getSoak(). ', '. $cake->getFrosting());
-            $order->setName($cake->getName());
             $cake->setOfficial(false);
-
+            $order->setOrderDate(new \DateTime());
             $em = $this->getDoctrine()->getManager();
             $em->persist($order);
             $em->flush();

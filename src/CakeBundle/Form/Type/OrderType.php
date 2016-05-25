@@ -16,7 +16,7 @@ class OrderType extends AbstractType
             ->add('cake', CakeType::class)
             ->add('portions')
             ->add('numberOfFloors')
-            ->add('delivery_date', DateType::class)
+            ->add('deliveryDate', DateType::class)
             ->add('phone')
             ->add('email', EmailType::class)
             ->add('order', SubmitType::class)
