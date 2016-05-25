@@ -146,7 +146,7 @@ class Order
     }
 
     /**
-     * @return mixed
+     * @return Cake
      */
     public function getCake()
     {
@@ -154,7 +154,7 @@ class Order
     }
 
     /**
-     * @param mixed $portions
+     * @param int $portions
      * @return Order
      */
     public function setPortions($portions)
@@ -164,7 +164,7 @@ class Order
     }
 
     /**
-     * @param mixed $numberOfFloors
+     * @param int $numberOfFloors
      * @return Order
      */
     public function setNumberOfFloors($numberOfFloors)
@@ -174,7 +174,7 @@ class Order
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getNumberOfFloors()
     {
@@ -182,7 +182,7 @@ class Order
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getPortions()
     {
@@ -200,7 +200,7 @@ class Order
     }
 
     /**
-     * @param mixed $orderDate
+     * @param \DateTime $orderDate
      * @return Order
      */
     public function setOrderDate($orderDate)
@@ -218,7 +218,7 @@ class Order
     }
 
     /**
-     * @return mixed
+     * @return \DateTime
      */
     public function getOrderDate()
     {
