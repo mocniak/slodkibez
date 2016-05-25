@@ -18,7 +18,7 @@ class OrderAdmin extends Admin
                 'label' => 'Cake',
                 'class' => 'CakeBundle\Entity\Cake'
             ))
-            ->add('porions')
+            ->add('portions')
             ->add('numberOfFloors')
             ->add('deliveryDate')
             ->add('phone')
@@ -30,17 +30,20 @@ class OrderAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('name');
+            ->add('email')
+            ->add('phone')
+            ->add('orderDate')
+            ->add('deliveryDate');
     }
 
     // Fields to be shown on lists
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('name')
-            ->add('spongeType')
-            ->add('pricePerPortion')
-            ->add('official')
+            ->addIdentifier('orderDate')
+            ->add('deliveryDate')
+            ->add('cake')
+            ->add('portions')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),
