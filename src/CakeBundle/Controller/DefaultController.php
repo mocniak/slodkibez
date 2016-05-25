@@ -26,6 +26,13 @@ class DefaultController extends Controller
         return $this->render('CakeBundle::about.html.twig');
     }
     /**
+     * @Route("/contact", name="contact")
+     */
+    public function contactAction(Request $request)
+    {
+        return $this->render('CakeBundle::contact.html.twig');
+    }
+    /**
      * @Route("/create_cake", name="create_cake")
      */
     public function creatorAction(Request $request)
