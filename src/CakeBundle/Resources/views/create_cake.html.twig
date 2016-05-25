@@ -138,15 +138,20 @@
                 </div>
 
                 <div class="cake-ingredient-pane"
-                     style="background-image: url('{{ asset('img/creator/portions.jpg') }}')">
+                     style="background-image: url('{{ asset('img/creator/cake_box.jpg') }}')">
 
                     <h2 id="odbior">Odbiór</h2>
 
                     <div class="col-xs-12 col-md-5 col-md-offset-1 fog">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl
-                            vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante
-                            ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et
-                            malesuada fames ac turpis egestas.</p>
+                            vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames.</p>
+                        {{ form_label(form.notes,
+                        'Uwagi',
+                        {'label_attr': {'class': 'control-label'}}
+                        ) }}
+                        {{ form_errors(form.notes) }}
+                        {{ form_widget(form.notes) }}
+
                     </div>
                     <div class="col-xs-6 col-xs-offset-2 col-md-4 col-md-offset-1 fog">
                         <div class="form-group">
