@@ -9,7 +9,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="orders")
  */
-class Order {
+class Order
+{
 
     /**
      * @ORM\Column(type="integer")
@@ -232,5 +233,10 @@ class Order {
     {
         $this->cake = $cake;
         return $this;
+    }
+
+    public function __toString()
+    {
+        return (string)$this->cake. ", " . $this->portions ." pieces";
     }
 }

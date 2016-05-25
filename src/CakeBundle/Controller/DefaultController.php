@@ -38,6 +38,7 @@ class DefaultController extends Controller
     public function creatorAction(Request $request)
     {
         $order = new Order();
+        $order->setOrderDate(new \DateTime("+2d"));
         $form = $this->createForm(OrderType::class,$order);
         $form->handleRequest($request);
 

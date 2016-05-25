@@ -17,8 +17,19 @@ class OrderType extends AbstractType
             ->add('cake', CakeType::class)
             ->add('portions')
             ->add('numberOfFloors')
-            ->add('deliveryDate', DateType::class)
-            ->add('notes', TextareaType::class)
+            ->add('deliveryDate',
+                DateType::class,
+                [
+                    'widget' => 'single_text',
+                    'format' => 'dd-MM-yyyy',
+                    'attr' => [
+                        'class' => 'datepicker',
+                        'data-provide' => 'datepicker',
+                        'data-date-format' => 'dd-mm-yyyy',
+                    ]
+                ]
+            )
+            ->add('notes', TextareaType::class, ['required' => false])
             ->add('phone')
             ->add('email', EmailType::class)
             ->add('order', SubmitType::class)
