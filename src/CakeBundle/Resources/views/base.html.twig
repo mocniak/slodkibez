@@ -43,11 +43,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="{{ path('homepage') }}">Strona główna</a></li>
+                <li><a href="{{ path('homepage') }}#homepage">Strona główna</a></li>
+                <li><a href="{{ path('homepage') }}#about">O nas</a></li>
+                <li><a href="{{ path('homepage') }}#contact">Kontakt</a></li>
                 <li><a href="#">Katalog</a></li>
                 <li><a href="{{ path('create_cake') }}">Zamów tort</a></li>
-                <li><a href="{{ path('about') }}">O nas</a></li>
-                <li><a href="{{ path('contact') }}">Kontakt</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -59,7 +59,7 @@
     {% block body %}
 
 
-        <div class="row">
+        <div class="row" id="homepage">
             <div class="box">
                 <div class="col-lg-12 text-center">
                     <div id="carousel-example-generic" class="carousel slide">
@@ -119,6 +119,84 @@
             </div>
         </div>
 
+        <div class="row" id="about">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">O
+                        <strong>Słodkim Bzie</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-md-6">
+                    <img class="img-responsive img-border-left" src="{{ asset('img/kostka_jagodowa.jpg') }}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <p>This is a great place to introduce your company or project and describe what you do.</p>
+                    <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.</p>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Nasz
+                        <strong>Zespół</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <h3>Krysia Daszczyńska
+                        <small>Pâtissier</small>
+                    </h3>
+                    <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.</p>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <h3>Magda Chojnacka
+                        <small>Pâtissier</small>
+                    </h3>
+                    <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.</p>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="row" id="contact">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Kontakt
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-md-8">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.937468114301!2d21.01318831537612!3d52.22635387975966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471eccf1e6307f21%3A0x693cf4cbd6aa7dc7!2sHo%C5%BCa+27A%2C+Warszawa!5e0!3m2!1spl!2spl!4v1464182789808" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4">
+                    <p>Telefon kontaktowy:
+                        <strong>+48 781 33 10 33</strong>
+                    </p>
+                    <p>Email:
+                        <strong><a href="mailto:kontakt@slodkibez.pl">kontakt@slodkibez.pl</a></strong>
+                    </p>
+                    <p>Adres:
+                        <strong>ul. Hoża 27A, 00-001 Warszawa</strong>
+                    </p>
+                    <p>Godziny otwarcia:
+                        <strong>10:00 – 20:00</strong></p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
 
     {% endblock %}
 </div>
