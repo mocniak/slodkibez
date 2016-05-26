@@ -14,13 +14,34 @@ class OrderAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('cake', 'entity', array(
-                'label' => 'Cake',
-                'class' => 'CakeBundle\Entity\Cake'
+            ->add('cake.name', 'text', array(
+                'label' => 'Cake name',
+                'read_only' => true,
+                'disabled' => true,
             ))
+            ->add('cake.spongeType', 'entity', array(
+                'label' => 'Spongecake type',
+                'class' => 'CakeBundle\Entity\SpongeType',
+                'read_only' => true,
+                'disabled' => true,
+            ))
+            ->add('cake.soak', null, [
+                'read_only' => true,
+                'disabled' => true
+            ])
+            ->add('cake.buttercreams', 'sonata_type_model', [
+                'multiple' => true,
+                'read_only' => true,
+                'disabled' => true,
+            ])
+            ->add('cake.frosting', null, [
+                'read_only' => true,
+                'disabled' => true
+            ])
             ->add('portions')
             ->add('numberOfFloors')
-            ->add('deliveryDate')
+            ->add('orderDate', 'sonata_type_datetime_picker', ['format' => 'y-MM-d'])
+            ->add('deliveryDate', 'sonata_type_datetime_picker', ['format' => 'y-MM-d'])
             ->add('phone')
             ->add('email')
             ->add('notes');
@@ -36,14 +57,19 @@ class OrderAdmin extends Admin
             ->add('deliveryDate');
     }
 
+    protected $datagridValues = array(
+        '_page' => 1,
+        '_sort_order' => 'DESC',
+        '_sort_by' => 'deliveryDate',
+    );
+
     // Fields to be shown on lists
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('orderDate')
-            ->add('deliveryDate')
-            ->add('cake')
-            ->add('portions')
+            ->addIdentifier('name')
+            ->add('orderDate', null, ['format' => 'Y-m-d'])
+            ->add('deliveryDate', null, ['format' => 'Y-m-d'])
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),

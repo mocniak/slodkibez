@@ -237,6 +237,9 @@ class Order
 
     public function __toString()
     {
-        return (string)$this->cake. ", " . $this->portions ." pieces";
+        return (string)$this->cake. ", " . $this->portions ." porcji";
+    }
+    public function getName() {
+        return (string)$this;
     }
 }
