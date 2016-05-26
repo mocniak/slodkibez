@@ -158,7 +158,7 @@ hr {
     display: block;
 }
 .fog {
-    /*background-color: rgba(255,255,255,0.5);*/
+    background-color: rgba(255,255,255,0.5);
     padding-top: 15px;
     padding-bottom: 10px;
 }
@@ -177,7 +177,9 @@ footer p {
     background-position: center;
     background-size: cover;
 }
-
+label.control-label {
+    clear: left;
+}
 @media screen and (min-width:768px) {
     .brand {
         display: block;
