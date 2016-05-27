@@ -144,15 +144,23 @@ hr {
     border-style: solid;
 }
 .cake-ingredient-pane input {
-    margin: 13px -5px 13px 20px;
+    margin: 13px -3px 13px 8px;
+    display: block;
+    float: left;
+    clear: left;
+}
+.cake-ingredient-pane textarea {
+    width: 100%;
+    height: 150px;
     display: block;
     float: left;
     clear: left;
 }
 .cake-ingredient-pane label {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 16px;
-    margin: 10px 10px 10px 20px;
+    padding: 10px 0;
+    margin: 0 0 0 20px;
     float: left;
     clear: none;
     display: block;
