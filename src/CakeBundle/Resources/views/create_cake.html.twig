@@ -34,10 +34,8 @@
                     </div>
                     <div class="col-xs-10 col-xs-offset-2 col-md-4 col-md-offset-1 fog">
                         <div class="form-group">
-                            <div class="col-sm-10">
-                                {{ form_errors(form.cake.spongeType) }}
-                                {{ form_widget(form.cake.spongeType) }}
-                            </div>
+                            {{ form_errors(form.cake.spongeType) }}
+                            {{ form_widget(form.cake.spongeType) }}
                         </div>
                     </div>
                 </div>
@@ -55,10 +53,8 @@
                     </div>
                     <div class="col-xs-10 col-xs-offset-2 col-md-4 col-md-offset-1 fog">
                         <div class="form-group">
-                            <div class="col-sm-10">
-                                {{ form_errors(form.cake.soak) }}
-                                {{ form_widget(form.cake.soak) }}
-                            </div>
+                            {{ form_errors(form.cake.soak) }}
+                            {{ form_widget(form.cake.soak) }}
                         </div>
                     </div>
                 </div>
@@ -76,10 +72,8 @@
                     </div>
                     <div class="col-xs-10 col-xs-offset-2 col-md-4 col-md-offset-1 fog">
                         <div class="form-group">
-                            <div class="col-sm-10">
-                                {{ form_errors(form.cake.buttercreams) }}
-                                {{ form_widget(form.cake.buttercreams) }}
-                            </div>
+                            {{ form_errors(form.cake.buttercreams) }}
+                            {{ form_widget(form.cake.buttercreams) }}
                         </div>
                     </div>
                 </div>
@@ -87,7 +81,7 @@
                 <div class="cake-ingredient-pane"
                      style="background-image: url('{{ asset('img/creator/frosting.jpg') }}')">
 
-                    <h2 id="polewa">Polewa</h2>
+                    <h2 id="pokrycie">Pokrycie</h2>
 
                     <div class="col-xs-12 col-md-5 col-md-offset-1 fog">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl
@@ -97,10 +91,8 @@
                     </div>
                     <div class="col-xs-10 col-xs-offset-2 col-md-4 col-md-offset-1 fog">
                         <div class="form-group">
-                            <div class="col-sm-10">
-                                {{ form_errors(form.cake.frosting) }}
-                                {{ form_widget(form.cake.frosting) }}
-                            </div>
+                            {{ form_errors(form.cake.frosting) }}
+                            {{ form_widget(form.cake.frosting) }}
                         </div>
                     </div>
                 </div>
@@ -118,17 +110,15 @@
                     </div>
                     <div class="col-xs-10 col-xs-offset-2 col-md-4 col-md-offset-1 fog">
                         <div class="form-group">
-                            <div class="col-sm-10">
-                                {{ form_errors(form.portions) }}
-                                {{ form_widget(form.portions) }}
+                            {{ form_errors(form.portions) }}
+                            {{ form_widget(form.portions) }}
 
-                                {{ form_label(form.numberOfFloors,
-                                'Piętra',
-                                {'label_attr': {'class': 'control-label'}}
-                                ) }}
-                                {{ form_errors(form.numberOfFloors) }}
-                                {{ form_widget(form.numberOfFloors) }}
-                            </div>
+                            {{ form_label(form.numberOfFloors,
+                            'Piętra',
+                            {'label_attr': {'class': 'control-label'}}
+                            ) }}
+                            {{ form_errors(form.numberOfFloors) }}
+                            {{ form_widget(form.numberOfFloors) }}
                         </div>
                     </div>
                 </div>
@@ -151,28 +141,26 @@
                     </div>
                     <div class="col-xs-10 col-xs-offset-2 col-md-4 col-md-offset-1 fog">
                         <div class="form-group">
-                            <div class="col-sm-10">
-                                {{ form_label(form.portions,
-                                'Dzień odbioru',
-                                {'label_attr': {'class': 'control-label'}}
-                                ) }}
-                                {{ form_errors(form.deliveryDate) }}
-                                {{ form_widget(form.deliveryDate) }}
+                            {{ form_label(form.portions,
+                            'Dzień odbioru',
+                            {'label_attr': {'class': 'control-label'}}
+                            ) }}
+                            {{ form_errors(form.deliveryDate) }}
+                            {{ form_widget(form.deliveryDate) }}
 
-                                {{ form_label(form.phone,
-                                'Numer telefonu',
-                                {'label_attr': {'class': 'control-label'}}
-                                ) }}
-                                {{ form_errors(form.phone) }}
-                                {{ form_widget(form.phone) }}
+                            {{ form_label(form.phone,
+                            'Numer telefonu',
+                            {'label_attr': {'class': 'control-label'}}
+                            ) }}
+                            {{ form_errors(form.phone) }}
+                            {{ form_widget(form.phone) }}
 
-                                {{ form_label(form.email,
-                                'Adres email',
-                                {'label_attr': {'class': 'control-label'}}
-                                ) }}
-                                {{ form_errors(form.email) }}
-                                {{ form_widget(form.email) }}
-                            </div>
+                            {{ form_label(form.email,
+                            'Adres email',
+                            {'label_attr': {'class': 'control-label'}}
+                            ) }}
+                            {{ form_errors(form.email) }}
+                            {{ form_widget(form.email) }}
                         </div>
                     </div>
                 </div>
