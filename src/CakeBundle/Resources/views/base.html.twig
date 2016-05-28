@@ -22,7 +22,7 @@
 </head>
 <body>
 
-<div class="brand">Słodki bez</div>
+<div class="brand">Słodki Bez</div>
 {#<img id="main-logo" src="{{ asset('img/logo.png') }}">#}
 <div class="address-bar">Hoża 27a | 00-679 Warszawa | +48 123 456 789</div>
 
@@ -47,7 +47,7 @@
                 <li><a href="{{ path('homepage') }}">Strona główna</a></li>
                 <li><a href="{{ path('homepage') }}#about">O nas</a></li>
                 <li><a href="{{ path('homepage') }}#contact">Kontakt</a></li>
-                <li><a href="#">Katalog</a></li>
+                {#<li><a href="#">Katalog</a></li>#}
                 <li><a href="{{ path('create_cake') }}">Zamów tort</a></li>
             </ul>
         </div>
@@ -101,7 +101,8 @@
                     <hr>
                     <p><strong>Słodki Bez</strong> to kawiarnia i cukiernia oferująca zdrowe wypieki — bez cukru, bez białej mąki, bez glutenu i bez wyrzutów sumienia.</p>
                     <p>Uwielbiamy udowadniać, że ze zdrowych produktów można tworzyć smaki, które biją na głowę te
-                        tradycyjne. Przekonywanie nawet największych niedowiarków, że zdrowe desery mogą być tak pyszne, jest dla nas wielką radością!
+                        tradycyjne. </p>
+                    <p>Przekonywanie nawet największych niedowiarków, że zdrowe desery mogą być tak pyszne, jest dla nas wielką radością!
                     </p>
                 </div>
             </div>
@@ -127,7 +128,7 @@
                         dbających o linię.</p>
 
                     <p>W naszej kuchni królują soczyste kolory, piękne zapachy i dobra energia, którymi kochamy się
-                        dzielić dlatego właśnie powstał Słodki Bez.</p>
+                        dzielić.</p>
                     <p>Zapraszamy serdecznie do naszej cukierni!</p>
                 </div>
                 <div class="clearfix"></div>
@@ -144,7 +145,7 @@
                     <hr>
                 </div>
                 <div class="col-md-6">
-                    <p>Naszą specjalnością są <strong><a href="{{ path('create_cake') }}">torty na zamówienie</a></strong>, ale na tym się nie zatrzymujemy. Tworzymy zdrowe wersje praktycznie wszystkich deserów — <strong>jogurtów</strong>, <strong>lodów</strong> i <strong>ciastek</strong>. W naszej kawiarni serwujemy również <strong>pyszną kawę</strong>, do której dodajemy mleko <strong>bez laktozy</strong>, mleko migdałowe oraz naturalne słodziki.</p>
+                    <p>Naszą specjalnością są <strong><a href="{{ path('create_cake') }}">torty na zamówienie</a></strong>, ale na tym się nie zatrzymujemy. Tworzymy zdrowe wersje praktycznie wszystkich deserów — <strong>jogurtów</strong>, <strong>lodów</strong> i <strong>ciastek</strong>. W naszej kawiarni serwujemy również <strong>pyszną kawę</strong>, do której dodajemy mleko <strong>bez laktozy</strong>, mleko migdałowe własnej produkcji, a słodzimy ksylitolem.</p>
                 </div>
                 <div class="col-md-6">
                     <img class="img-responsive img-border-left" src="{{ asset('img/jogurty.jpg') }}" alt="">
@@ -163,13 +164,13 @@
                     <hr>
                 </div>
                 <div class="col-sm-6 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <img class="img-responsive" src="{{ asset('img/krysia.jpg') }}" alt="">
                     <h3>Krysia Daszczyńska
                     </h3>
                     <p>Od dziecka pasjonatka cukiernictwa, a od kilku lat również zdrowego stylu życia — obie pasje udało się połączyć w kreatywną całość. Spędziła kilka lat w Paryżu, gdzie uczęszczała na jedną z najlepszych na świecie akademii kulinarnych — Le Cordon Bleu. </p>
                 </div>
                 <div class="col-sm-6 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <img class="img-responsive" src="{{ asset('img/magda.jpg') }}" alt="">
                     <h3>Magda Chojnacka</h3>
                     <p>Jest doktorantką biotechnologii, jednak pasja do zdrowego jedzenia wygrała z karierą naukową. Magda, eksperymentując latami we własnej kuchni, szkoląc techniki i wykorzystując swoją wiedzę, osiągnęła poziom mistrzostwa który trzeba pokazać światu!</p>
                 </div>
