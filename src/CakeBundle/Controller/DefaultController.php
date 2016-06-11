@@ -26,7 +26,7 @@ class DefaultController extends Controller
         $order = new Order();
         $order->setOrderDate(new \DateTime());
         $order->setDeliveryDate(new \DateTime("+2 days"));
-        $order->setPortions(8);
+        $order->setPortions(12);
         $order->setNumberOfFloors(1);
         $form = $this->createForm(OrderType::class,$order);
         $form->handleRequest($request);
@@ -35,6 +35,11 @@ class DefaultController extends Controller
             $cake = $order->getCake();
             $cake->setName($cake->getSpongeType(). ', '.$cake->getSoak(). ', '. $cake->getFrosting());
             $cake->setOfficial(false);
+
+            $portions_choice = $form->get('portions_choice')->getData();
+            $portions_input = $form->get('portions_input')->getData();
+
+            $order->setPortions(null == $portions_input ? $portions_choice : $portions_input);
             $order->setOrderDate(new \DateTime());
             $em = $this->getDoctrine()->getManager();
             $em->persist($order);

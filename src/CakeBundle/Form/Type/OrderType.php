@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -16,13 +17,21 @@ class OrderType extends AbstractType
     {
         $builder
             ->add('cake', CakeType::class)
-            ->add('portions', ChoiceType::class, [
+            ->add('portions_choice', ChoiceType::class, [
                 'choices' => [
-                    4 => '4 porcje',
-                    8 => '8 porcji',
-                    12 => '12 porcji'
+                    6 => '6 porcji',
+                    12 => '12 porcji',
+                    18 => '18 porcji'
                 ],
+                'placeholder' => false,
                 'expanded' => true,
+                'mapped' => false,
+                'required' => false,
+                'empty_data' => null
+            ])
+            ->add('portions_input', IntegerType::class, [
+                'mapped' => false,
+                'required' => false,
             ])
             ->add('numberOfFloors', ChoiceType::class, [
                 'choices' => [
@@ -47,7 +56,6 @@ class OrderType extends AbstractType
             ->add('notes', TextareaType::class, ['required' => false])
             ->add('phone')
             ->add('email', EmailType::class)
-            ->add('order', SubmitType::class)
-        ;
+            ->add('order', SubmitType::class);
     }
 }
