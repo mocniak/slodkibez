@@ -11,7 +11,10 @@
                 <hr>
                 <h2 class="intro-text text-center">Zamów <strong>tort</strong></h2>
                 <hr>
-                <p>Z radością pieczemy torty "szyte na miarę", doskonale dopasowane do Państwa smaków i oczekiwań. W kreatorze tortów mogą Państwo sami skomponować krok po kroku swój tort lub, jeżeli nie znależli Państwo swoich ulubionych smaków wśród naszych propozycji, mogą Państwo wpisac dodatkowe życzenia na końcu formularza. Miłego kreowania!</p>
+                <p>Z radością pieczemy torty "szyte na miarę", doskonale dopasowane do Państwa smaków i oczekiwań. W
+                    kreatorze tortów mogą Państwo sami skomponować krok po kroku swój tort lub, jeżeli nie znależli
+                    Państwo swoich ulubionych smaków wśród naszych propozycji, mogą Państwo wpisac dodatkowe życzenia na
+                    końcu formularza. Miłego kreowania!</p>
                 <p></p>
             </div>
 
@@ -31,7 +34,8 @@
 
                 <div class="col-xs-12 col-md-4 col-md-offset-1 fog">
                     <p>Nasze biszkopty zawsze są bezglutenowe. Proponujemy również biszkopty niskowęglowodanowe
-                    (kokosowy, migdałowy, makowy, orzechowe) przygotowane bez mąki, o niezwykłym smaku i aromacie.  </p>
+                        (kokosowy, migdałowy, makowy, orzechowe) przygotowane bez mąki, o niezwykłym smaku i
+                        aromacie. </p>
                 </div>
                 <div class="col-xs-10 col-xs-offset-2 col-md-5 col-md-offset-1 fog">
                     <div class="form-group">
@@ -47,7 +51,7 @@
                 <h2 id="nasączenie">Nasączenie</h2>
 
                 <div class="col-xs-12 col-md-4 col-md-offset-1 fog">
-                    <p>Nie ma nic gorszego niż suchy tort! Nasze biszkopty są przyjemnie wilgotne i pełne smaku.  </p>
+                    <p>Nie ma nic gorszego niż suchy tort! Nasze biszkopty są przyjemnie wilgotne i pełne smaku. </p>
                 </div>
                 <div class="col-xs-10 col-xs-offset-2 col-md-5 col-md-offset-1 fog">
                     <div class="form-group">
@@ -63,7 +67,9 @@
                 <h2 id="krem">Krem</h2>
 
                 <div class="col-xs-12 col-md-4 col-md-offset-1 fog">
-                    <p>Starannie przygotowujemy nasze kremy z roślinnych składników. Jest to bogactwo wartościowych mikroelementów w aksamitnej, pysznej postaci. Każda z naszych propozycji posiada opis składu, by jak najlepiej dostosować się do Państwa oczekiwań.</p>
+                    <p>Starannie przygotowujemy nasze kremy z roślinnych składników. Jest to bogactwo wartościowych
+                        mikroelementów w aksamitnej, pysznej postaci. Każda z naszych propozycji posiada opis składu, by
+                        jak najlepiej dostosować się do Państwa oczekiwań.</p>
                 </div>
                 <div class="col-xs-10 col-xs-offset-2 col-md-5 col-md-offset-1 fog">
                     <div class="form-group">
@@ -95,15 +101,18 @@
                 <h2 id="rozmiar">Rozmiar</h2>
 
                 <div class="col-xs-12 col-md-4 col-md-offset-1 fog">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl
-                        vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante
-                        ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et
-                        malesuada fames ac turpis egestas.</p>
+                    <p>Mały, średni, czy wielki? Nasze torty są doskonałym zwieńczeniem kolacji dla dwojga jak i punktem
+                        kulminacyjnym firmowej imprezy. Tworzymy też torty piętrowe, idealne na wesela i urodziny.</p>
                 </div>
                 <div class="col-xs-10 col-xs-offset-2 col-md-5 col-md-offset-1 fog">
                     <div class="form-group">
-                        {{ form_errors(form.portions) }}
-                        {{ form_widget(form.portions) }}
+                        {{ form_errors(form.portions_choice) }}
+                        {{ form_widget(form.portions_choice) }}
+                        {{ form_widget(form.portions_input, {
+                            'attr': {
+                                'placeholder': 'inna liczba porcji',
+                                'class': 'portions-input'
+                            }}) }}
 
                         {{ form_label(form.numberOfFloors,
                         'Piętra',
@@ -132,7 +141,7 @@
                 </div>
                 <div class="col-xs-10 col-xs-offset-2 col-md-4 col-md-offset-1 fog">
                     <div class="form-group">
-                        {{ form_label(form.portions,
+                        {{ form_label(form.deliveryDate,
                         'Dzień odbioru',
                         {'label_attr': {'class': 'control-label'}}
                         ) }}
@@ -167,4 +176,21 @@
             {{ form_end(form) }}
         </div>
     </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        $('.datepicker').datepicker({
+            startDate: '+2d'
+        });
+
+    </script>
+    <script>
+        $(".portions-input").click(function () {
+            $('input[name="order[portions_choice]"]').attr("checked", false)
+        });
+        $("input[name='order[portions_choice]']").click(function () {
+            $('input[name="order[portions_input]"]').val('')
+        });
+    </script>
 {% endblock %}
