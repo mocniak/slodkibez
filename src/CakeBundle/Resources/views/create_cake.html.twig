@@ -6,147 +6,191 @@
 {% block body %}
     <div class="row">
         <div class="box">
-            <div class="col-lg-12">
-                {{ form_start(form, {'attr': {'class' : 'form-horizontal'}}) }}
+            {{ form_start(form, {'attr': {'class' : 'form-horizontal'}}) }}
+            <div class="col-xs-12 col-md-6">
                 <hr>
-                <h1>Zamów tort</h1>
+                <h2 class="intro-text text-center">Zamów <strong>tort</strong></h2>
                 <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl
-                    vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante
-                    ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et
-                    malesuada fames ac turpis egestas.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl
-                    vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante
-                    ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et
-                    malesuada fames ac turpis egestas.</p>
-
-
-                <div class="cake-ingredient-pane"
-                     style="background-image: url('{{ asset('img/creator/spongecake.jpg') }}')">
-
-                    <h2 id="rodzaj_biszkoptu">Rodzaj biszkoptu</h2>
-
-                    <div class="col-xs-12 col-md-5 col-md-offset-1 fog">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl
-                            vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante
-                            ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et
-                            malesuada fames ac turpis egestas.</p>
-                    </div>
-                    <div class="col-xs-10 col-xs-offset-2 col-md-4 col-md-offset-1 fog">
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                {{ form_errors(form.cake.spongeType) }}
-                                {{ form_widget(form.cake.spongeType) }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cake-ingredient-pane"
-                     style="background-image: url('{{ asset('img/creator/soak.jpg') }}')">
-
-                    <h2 id="nasączenie">Nasączenie</h2>
-
-                    <div class="col-xs-12 col-md-5 col-md-offset-1 fog">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl
-                            vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante
-                            ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et
-                            malesuada fames ac turpis egestas.</p>
-                    </div>
-                    <div class="col-xs-10 col-xs-offset-2 col-md-4 col-md-offset-1 fog">
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                {{ form_errors(form.cake.soak) }}
-                                {{ form_widget(form.cake.soak) }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cake-ingredient-pane"
-                     style="background-image: url('{{ asset('img/creator/buttercream.jpg') }}')">
-
-                    <h2 id="krem">Krem</h2>
-
-                    <div class="col-xs-12 col-md-5 col-md-offset-1 fog">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl
-                            vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante
-                            ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et
-                            malesuada fames ac turpis egestas.</p>
-                    </div>
-                    <div class="col-xs-10 col-xs-offset-2 col-md-4 col-md-offset-1 fog">
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                {{ form_errors(form.cake.buttercreams) }}
-                                {{ form_widget(form.cake.buttercreams) }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cake-ingredient-pane"
-                     style="background-image: url('{{ asset('img/creator/frosting.jpg') }}')">
-
-                    <h2 id="polewa">Polewa</h2>
-
-                    <div class="col-xs-12 col-md-5 col-md-offset-1 fog">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl
-                            vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante
-                            ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et
-                            malesuada fames ac turpis egestas.</p>
-                    </div>
-                    <div class="col-xs-10 col-xs-offset-2 col-md-4 col-md-offset-1 fog">
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                {{ form_errors(form.cake.frosting) }}
-                                {{ form_widget(form.cake.frosting) }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cake-ingredient-pane"
-                     style="background-image: url('{{ asset('img/creator/portions.jpg') }}')">
-
-                    <h2 id="rozmiar">Rozmiar</h2>
-
-                    <div class="col-xs-12 col-md-5 col-md-offset-1 fog">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl
-                            vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante
-                            ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et
-                            malesuada fames ac turpis egestas.</p>
-                    </div>
-                    <div class="col-xs-6 col-xs-offset-2 col-md-4 col-md-offset-1 fog">
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                {{ form_label(form.portions,
-                                'Liczba porcji',
-                                {'label_attr': {'class': 'control-label'}}
-                                ) }}
-                                {{ form_errors(form.portions) }}
-                                {{ form_widget(form.portions) }}
-
-                                {{ form_label(form.numberOfFloors,
-                                'Liczba pięter',
-                                {'label_attr': {'class': 'control-label'}}
-                                ) }}
-                                {{ form_errors(form.numberOfFloors) }}
-                                {{ form_widget(form.numberOfFloors) }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        {{ form_widget(form.order,  {'attr': {'class': 'btn btn-default'}}) }}
-                    </div>
-                </div>
-
-                <div>
-                </div>
-                {{ form_end(form) }}
+                <p>Z radością pieczemy torty "szyte na miarę", doskonale dopasowane do Państwa smaków i oczekiwań. W
+                    kreatorze tortów mogą Państwo sami skomponować krok po kroku swój tort lub, jeżeli nie znależli
+                    Państwo swoich ulubionych smaków wśród naszych propozycji, mogą Państwo wpisac dodatkowe życzenia na
+                    końcu formularza. Miłego kreowania!</p>
+                <p></p>
             </div>
+
+            <div class="col-xs-12 col-md-6">
+                <img class="img-responsive img-border-left" src="{{ asset('img/sernik.jpg') }}" alt="">
+            </div>
+            <div class="clearfix"></div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="box">
+            <div class="cake-ingredient-pane"
+                 style="background-image: url('{{ asset('img/creator/spongecake.jpg') }}')">
+
+                <h2 id="rodzaj_biszkoptu">Rodzaj biszkoptu</h2>
+
+                <div class="col-xs-12 col-md-4 col-md-offset-1 fog">
+                    <p>Nasze biszkopty zawsze są bezglutenowe. Proponujemy również biszkopty niskowęglowodanowe
+                        (kokosowy, migdałowy, makowy, orzechowe) przygotowane bez mąki, o niezwykłym smaku i
+                        aromacie. </p>
+                </div>
+                <div class="col-xs-10 col-xs-offset-2 col-md-5 col-md-offset-1 fog">
+                    <div class="form-group">
+                        {{ form_errors(form.cake.spongeType) }}
+                        {{ form_widget(form.cake.spongeType) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="cake-ingredient-pane"
+                 style="background-image: url('{{ asset('img/creator/soak.jpg') }}')">
+
+                <h2 id="nasączenie">Nasączenie</h2>
+
+                <div class="col-xs-12 col-md-4 col-md-offset-1 fog">
+                    <p>Nie ma nic gorszego niż suchy tort! Nasze biszkopty są przyjemnie wilgotne i pełne smaku. </p>
+                </div>
+                <div class="col-xs-10 col-xs-offset-2 col-md-5 col-md-offset-1 fog">
+                    <div class="form-group">
+                        {{ form_errors(form.cake.soak) }}
+                        {{ form_widget(form.cake.soak) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="cake-ingredient-pane"
+                 style="background-image: url('{{ asset('img/creator/buttercream.jpg') }}')">
+
+                <h2 id="krem">Krem</h2>
+
+                <div class="col-xs-12 col-md-4 col-md-offset-1 fog">
+                    <p>Starannie przygotowujemy nasze kremy z roślinnych składników. Jest to bogactwo wartościowych
+                        mikroelementów w aksamitnej, pysznej postaci. Każda z naszych propozycji posiada opis składu, by
+                        jak najlepiej dostosować się do Państwa oczekiwań.</p>
+                </div>
+                <div class="col-xs-10 col-xs-offset-2 col-md-5 col-md-offset-1 fog">
+                    <div class="form-group">
+                        {{ form_errors(form.cake.buttercreams) }}
+                        {{ form_widget(form.cake.buttercreams) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="cake-ingredient-pane"
+                 style="background-image: url('{{ asset('img/creator/frosting.jpg') }}')">
+
+                <h2 id="pokrycie">Pokrycie</h2>
+
+                <div class="col-xs-12 col-md-4 col-md-offset-1 fog">
+                    <p>Zwieńczenie tortu. </p>
+                </div>
+                <div class="col-xs-10 col-xs-offset-2 col-md-5 col-md-offset-1 fog">
+                    <div class="form-group">
+                        {{ form_errors(form.cake.frosting) }}
+                        {{ form_widget(form.cake.frosting) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="cake-ingredient-pane"
+                 style="background-image: url('{{ asset('img/creator/portions.jpg') }}')">
+
+                <h2 id="rozmiar">Rozmiar</h2>
+
+                <div class="col-xs-12 col-md-4 col-md-offset-1 fog">
+                    <p>Mały, średni, czy wielki? Nasze torty są doskonałym zwieńczeniem kolacji dla dwojga jak i punktem
+                        kulminacyjnym firmowej imprezy. Tworzymy też torty piętrowe, idealne na wesela i urodziny.</p>
+                </div>
+                <div class="col-xs-10 col-xs-offset-2 col-md-5 col-md-offset-1 fog">
+                    <div class="form-group">
+                        {{ form_errors(form.portions_choice) }}
+                        {{ form_widget(form.portions_choice) }}
+                        {{ form_widget(form.portions_input, {
+                            'attr': {
+                                'placeholder': 'inna liczba porcji',
+                                'class': 'portions-input'
+                            }}) }}
+
+                        {{ form_label(form.numberOfFloors,
+                        'Piętra',
+                        {'label_attr': {'class': 'control-label'}}
+                        ) }}
+                        {{ form_errors(form.numberOfFloors) }}
+                        {{ form_widget(form.numberOfFloors) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="cake-ingredient-pane"
+                 style="background-image: url('{{ asset('img/creator/cake_box.jpg') }}')">
+
+                <h2 id="odbior">Odbiór</h2>
+
+                <div class="col-xs-12 col-md-5 col-md-offset-1 fog">
+                    <p>Tort będzie czekać na Państwa w wybranym terminie przy ulicy Hożej 27A w Warszawie.</p>
+                    {{ form_label(form.notes,
+                    'Uwagi',
+                    {'label_attr': {'class': 'control-label'}}
+                    ) }}
+                    {{ form_errors(form.notes) }}
+                    {{ form_widget(form.notes, {'attr': {'placeholder': 'Alergie, dekoracje, napisy...'} }) }}
+
+                </div>
+                <div class="col-xs-10 col-xs-offset-2 col-md-4 col-md-offset-1 fog">
+                    <div class="form-group">
+                        {{ form_label(form.deliveryDate,
+                        'Dzień odbioru',
+                        {'label_attr': {'class': 'control-label'}}
+                        ) }}
+                        {{ form_errors(form.deliveryDate) }}
+                        {{ form_widget(form.deliveryDate) }}
+
+                        {{ form_label(form.phone,
+                        'Numer telefonu',
+                        {'label_attr': {'class': 'control-label'}}
+                        ) }}
+                        {{ form_errors(form.phone) }}
+                        {{ form_widget(form.phone) }}
+
+                        {{ form_label(form.email,
+                        'Adres email',
+                        {'label_attr': {'class': 'control-label'}}
+                        ) }}
+                        {{ form_errors(form.email) }}
+                        {{ form_widget(form.email) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    {{ form_widget(form.order,  {'attr': {'class': 'btn btn-success btn-lg btn-block'}, 'label': 'Zamów'}) }}
+                </div>
+            </div>
+
+            <div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        $('.datepicker').datepicker({
+            startDate: '+2d'
+        });
+
+    </script>
+    <script>
+        $(".portions-input").click(function () {
+            $('input[name="order[portions_choice]"]').attr("checked", false)
+        });
+        $("input[name='order[portions_choice]']").click(function () {
+            $('input[name="order[portions_input]"]').val('')
+        });
+    </script>
 {% endblock %}

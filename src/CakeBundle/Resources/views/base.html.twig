@@ -10,6 +10,8 @@
 
     <!-- Custom CSS -->
     <link href="{{ asset('css/business-casual.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker.css"
+          rel="stylesheet">
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext"
@@ -20,9 +22,9 @@
 </head>
 <body>
 
-<div class="brand">Słodki bez</div>
+<div class="brand">Słodki Bez</div>
 {#<img id="main-logo" src="{{ asset('img/logo.png') }}">#}
-<div class="address-bar">Hoża 79a | 00-679 Warszawa | +48 123 456 789</div>
+<div class="address-bar">Hoża 27a | 00-521 Warszawa | +48 781 331 033</div>
 
 <!-- Navigation -->
 <nav class="navbar navbar-default" role="navigation">
@@ -43,10 +45,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="{{ path('homepage') }}">Strona główna</a></li>
-                <li><a href="#">O nas</a></li>
-                <li><a href="#">Katalog</a></li>
+                <li><a href="{{ path('homepage') }}#about">O nas</a></li>
+                <li><a href="{{ path('homepage') }}#contact">Kontakt</a></li>
+                {#<li><a href="#">Katalog</a></li>#}
                 <li><a href="{{ path('create_cake') }}">Zamów tort</a></li>
-                <li><a href="#">Kontakt</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -60,25 +62,25 @@
 
         <div class="row">
             <div class="box">
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-8 text-center">
                     <div id="carousel-example-generic" class="carousel slide">
                         <!-- Indicators -->
                         <ol class="carousel-indicators hidden-xs">
                             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
                         </ol>
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
-                            <div class="item active">
-                                <img class="img-responsive img-full" src="{{ asset('img/coffee.jpg') }}" alt="">
+                            <div class="item active" style="background-image: url('{{ asset('img/tarta.jpg') }}');">
                             </div>
-                            <div class="item">
-                                <img class="img-responsive img-full" src="{{ asset('img/coffee.jpg') }}" alt="">
+                            <div class="item" style="background-image: url('{{ asset('img/sernik.jpg') }}');">
                             </div>
-                            <div class="item">
-                                <img class="img-responsive img-full" src="{{ asset('img/coffee.jpg') }}" alt="">
+                            <div class="item" style="background-image: url('{{ asset('img/coffee.jpg') }}');">
+                            </div>
+                            <div class="item" style="background-image: url('{{ asset('img/kostka_jagodowa.jpg') }}');">
                             </div>
                         </div>
 
@@ -91,36 +93,122 @@
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl
-                        vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante
-                        ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et
-                        malesuada fames ac turpis egestas.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
+                <div class="col-lg-4">
                     <hr>
-                    <h2 class="intro-text text-center">Lorem ipsum
-                        <strong>dolor sit amet</strong>
+                    <h2 class="intro-text text-center">Bez <strong>wyrzutów sumienia</strong>
                     </h2>
                     <hr>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl
-                        vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante
-                        ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et
-                        malesuada fames ac turpis egestas.</p>
+                    <p><strong>Słodki Bez</strong> to kawiarnia i cukiernia oferująca zdrowe wypieki — bez cukru, bez białej mąki, bez glutenu i bez wyrzutów sumienia.</p>
+                    <p>Uwielbiamy udowadniać, że ze zdrowych produktów można tworzyć smaki, które biją na głowę te
+                        tradycyjne. </p>
+                    <p>Przekonywanie nawet największych niedowiarków, że zdrowe desery mogą być tak pyszne, jest dla nas wielką radością!
+                    </p>
                 </div>
             </div>
         </div>
 
+        <div class="row" id="about">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">O
+                        <strong>Słodkim Bzie</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-md-6">
+                    <img class="img-responsive img-border-left" src="{{ asset('img/kostka_jagodowa.jpg') }}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <p>Każdy dzień w naszej pracowni to nowa fala inspiracji. Dbamy o to, żeby nasze wypieki utrzymywały
+                        najwyższą jakość, cieszyły oko naturalnymi kolorami i wyszły na zdrowie każdemu. Bazując na
+                        sezonowych owocach i produktach najwyższej jakości tworzymy odpowiedniki tradycyjnych deserów,
+                        które są odpowiednie dla <strong>wegan</strong>, <strong>alergików</strong>, osób przestrzegających różnych diet oraz tych
+                        dbających o linię.</p>
+
+                    <p>W naszej kuchni królują soczyste kolory, piękne zapachy i dobra energia, którymi kochamy się
+                        dzielić.</p>
+                    <p>Zapraszamy serdecznie do naszej cukierni!</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="row" id="about">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Nie tylko
+                        <strong>Wypieki</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-md-6">
+                    <p>Naszą specjalnością są <strong><a href="{{ path('create_cake') }}">torty na zamówienie</a></strong>, ale na tym się nie zatrzymujemy. Tworzymy zdrowe wersje praktycznie wszystkich deserów — <strong>jogurtów</strong>, <strong>lodów</strong> i <strong>ciastek</strong>. W naszej kawiarni serwujemy również <strong>pyszną kawę</strong>, do której dodajemy mleko <strong>bez laktozy</strong>, mleko migdałowe własnej produkcji, a słodzimy ksylitolem.</p>
+                </div>
+                <div class="col-md-6">
+                    <img class="img-responsive img-border-left" src="{{ asset('img/jogurty.jpg') }}" alt="">
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Nasz
+                        <strong>Zespół</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <img class="img-responsive" src="{{ asset('img/krysia.jpg') }}" alt="">
+                    <h3>Krysia Daszczyńska
+                    </h3>
+                    <p>Od dziecka pasjonatka cukiernictwa, a od kilku lat również zdrowego stylu życia — obie pasje udało się połączyć w kreatywną całość. Spędziła kilka lat w Paryżu, gdzie uczęszczała na jedną z najlepszych na świecie akademii kulinarnych — Le Cordon Bleu. </p>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <img class="img-responsive" src="{{ asset('img/magda.jpg') }}" alt="">
+                    <h3>Magda Chojnacka</h3>
+                    <p>Jest doktorantką biotechnologii, jednak pasja do zdrowego jedzenia wygrała z karierą naukową. Magda, eksperymentując latami we własnej kuchni, szkoląc techniki i wykorzystując swoją wiedzę, osiągnęła poziom mistrzostwa który trzeba pokazać światu!</p>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="row" id="contact">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Kontakt</h2>
+                    <hr>
+                </div>
+                <div class="col-md-8">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.937468114301!2d21.01318831537612!3d52.22635387975966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471eccf1e6307f21%3A0x693cf4cbd6aa7dc7!2sHo%C5%BCa+27A%2C+Warszawa!5e0!3m2!1spl!2spl!4v1464182789808"
+                            width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4">
+                    <p>Słodki Bez s.c.</p>
+                    <p>Telefon kontaktowy:<br>
+                        <strong>+48 781 331 033<br>+48 695 399 335</strong>
+                    </p>
+                    <p>Email:<br>
+                        <strong><a href="mailto:kontakt@slodkibez.pl">kontakt@slodkibez.pl</a></strong>
+                    </p>
+                    <p>Adres:<br>
+                        <strong>ul. Hoża 27a<br> 00-521 Warszawa</strong>
+                    </p>
+                    <p>Godziny otwarcia:<br>
+                        <strong>10:00 – 20:00</strong></p>
+                    <p>NIP:<br>
+                        <strong>7010571392</strong></p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
 
     {% endblock %}
 </div>
@@ -144,13 +232,17 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
         crossorigin="anonymous"></script>
-
-<!-- Script to Activate the Carousel -->
-<script>
+<!-- datepicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/locales/bootstrap-datepicker.pl.min.js">
+</script>
+{% block script %}
+    <!-- Script to Activate the Carousel -->
+    <script>
     $('.carousel').carousel({
         interval: 5000 //changes the speed
     })
 </script>
-
+{% endblock %}
 </body>
 </html>

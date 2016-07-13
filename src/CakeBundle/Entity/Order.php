@@ -9,12 +9,13 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="orders")
  */
-class Order {
+class Order
+{
 
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="UUID")
      */
 
     private $id;
@@ -28,7 +29,7 @@ class Order {
 
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      * @var integer
      */
     private $portions;
@@ -67,33 +68,10 @@ class Order {
 
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      * @var string
      */
     private $notes;
-    
-    /**
-     * @var OrderItemInterface[]
-     */
-    private $orderItems;
-
-    /**
-     * @param OrderItemInterface[] $orderItems
-     * @return Order
-     */
-    public function setOrderItems($orderItems)
-    {
-        $this->orderItems = $orderItems;
-        return $this;
-    }
-
-    /**
-     * @return OrderItemInterface[]
-     */
-    public function getOrderItems()
-    {
-        return $this->orderItems;
-    }
 
     /**
      * @param mixed $id
@@ -168,7 +146,7 @@ class Order {
     }
 
     /**
-     * @return mixed
+     * @return Cake
      */
     public function getCake()
     {
@@ -176,7 +154,7 @@ class Order {
     }
 
     /**
-     * @param mixed $portions
+     * @param int $portions
      * @return Order
      */
     public function setPortions($portions)
@@ -186,7 +164,7 @@ class Order {
     }
 
     /**
-     * @param mixed $numberOfFloors
+     * @param int $numberOfFloors
      * @return Order
      */
     public function setNumberOfFloors($numberOfFloors)
@@ -196,7 +174,7 @@ class Order {
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getNumberOfFloors()
     {
@@ -204,7 +182,7 @@ class Order {
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getPortions()
     {
@@ -222,7 +200,7 @@ class Order {
     }
 
     /**
-     * @param mixed $orderDate
+     * @param \DateTime $orderDate
      * @return Order
      */
     public function setOrderDate($orderDate)
@@ -240,10 +218,28 @@ class Order {
     }
 
     /**
-     * @return mixed
+     * @return \DateTime
      */
     public function getOrderDate()
     {
         return $this->orderDate;
+    }
+
+    /**
+     * @param Cake $cake
+     * @return Order
+     */
+    public function setCake($cake)
+    {
+        $this->cake = $cake;
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return (string)$this->cake. ", " . $this->portions ." porcji";
+    }
+    public function getName() {
+        return (string)$this;
     }
 }

@@ -45,8 +45,8 @@ class CakeAdmin extends Admin
             ->add('official')
             ->add('_action', 'actions', array(
                 'actions' => array(
-                    'edit' => array(),
-                    'delete' => array(),
+                'edit' => array(),
+                'delete' => array(),
                 )
             ));
     }
