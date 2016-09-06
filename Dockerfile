@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
 	zip \
 	unzip \
 	vim \
+	htop \
 	php-memcache \ 
 	php7.0-curl \
 	php7.0-gd \
